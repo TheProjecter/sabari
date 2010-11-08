@@ -131,7 +131,7 @@ ENDH
 			$fl++;
 			my $end = gettimeofday;
 			my $res = $end-$start;
-			print "</tr></table><hr><p class=\"ft\"><span style='color: red;'>At the end of the month site will be closed presumably for 2-3 weeks <s>due to aids</s> for maintenance<br>Access to video files temporarily closed</span><br/> Server resource viewer v".$VER."<br>Время выполнения скрипта: ", $res, " c.<br>Original script by <a href=\"mailto:anthony\@adsorbtion.org\">Sir Anthony</a></p>" if $fl == 2;
+			print "</tr></table><hr><p class=\"ft\"><a href=\"http://code.google.com/p/sabari/\">Sabari</a> v".$VER."<br>Время выполнения скрипта: ", $res, " c.<br>Original script by <a href=\"mailto:anthony\@adsorbtion.org\">Sir Anthony</a></p>" if $fl == 2;
 		}
 	}elsif(${$name} eq "f"){
 	#for safety cache or stand alone thumbinal.
