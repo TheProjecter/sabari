@@ -73,11 +73,9 @@ def putdata(form):
             td += 1
         print '''</tr>
 </table><hr><p class="ft">
-<span style="color: red;">At the end of the month site will be closed presumably for 2-3 weeks <s>due to aids</s> for maintenance
-<br>Access to video files temporarily closed</span><br/>
-Server resource viewer v %s<br>
+Sabari v %s<br>
 Time: %0.5f s.<br>
-Original <a href="/unless_scripts/viewer/">script</a> by 
+Original <a href="http://code.google.com/p/sabari/">script</a> by 
 <a href="mailto:anthony@adsorbtion.org\">Sir Anthony</a></p>
 ''' % (ver, time.time() - starttime)
 
@@ -105,7 +103,6 @@ class ImageCreator(Thread):
             w = maxsize
         im.thumbnail((int(w),int(h)), Image.ANTIALIAS)
         try: im.save(self.spath + ext, format)
-        #TODO: debug
         except IOError: pass
 
 def imagework(hval, filename):
