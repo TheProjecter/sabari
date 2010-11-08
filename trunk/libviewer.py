@@ -8,13 +8,13 @@ from threading import Thread
 
 ver = 1.99
 
-part = '/var/www/site' 
+part = '/var/www/site'
 
 starttime = time.time()
 
 def putdata(form):
     if form.has_key('d'):
-    	value = form['d'].value
+        value = form['d'].value
         mimetypes.init()
         print "Content-type: text/html; charset=utf8\n\n";
         print '''
@@ -43,16 +43,15 @@ def putdata(form):
             if os.path.isfile(part+value+'/'+filename):
                 files.append(filename)
             else:
-            	
                 if td > cols: td = 0
                 print '<td class="%s" valign="top" align="center">' % td
                 print '<a href="%s/"><img src="/icon/folder.png" width="165" height="165" alt="Dir">' % (os.path.join(value,filename))
-                print '<br>%s</a></td>' % filename 
+                print '<br>%s</a></td>' % filename
                 if td == cols: print '</tr><tr>'
                 td += 1
         for filename in files:
             #if filename.find('.') == 0: continue
-            if td > cols: td = 0            
+            if td > cols: td = 0
             filetype = mimetypes.guess_type(filename)[0]
             print '<td class="t%s" valign="top" align="center">' % td
             print '<a href="%s" target="_blank">' % (os.path.join(value,filename))
@@ -63,8 +62,8 @@ def putdata(form):
                     print '<img src="/cache/%s" alt="img">' % (hval + imtype)
                 else:
                     print 'Thumbinal created.';
-            else:            	
-            	if filetype:
+            else:
+                if filetype:
                     filetype = filetype.replace('/', '-')
                 else:
                     filetype = 'text-plain'
@@ -81,10 +80,7 @@ Time: %0.5f s.<br>
 Original <a href="/unless_scripts/viewer/">script</a> by 
 <a href="mailto:anthony@adsorbtion.org\">Sir Anthony</a></p>
 ''' % (ver, time.time() - starttime)
-    elif form.has_key('tag'):
-        from imagemanager import Manager
-        Manager(form).start()
-        
+
 class ImageCreator(Thread):
 
     def __init__ (self, filename, spath):
