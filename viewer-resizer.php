@@ -1,6 +1,6 @@
 <?php
 ### Originaly script by Sir Anthony
-#Типа лицензия GNU GPL и все такое
+#Типа лицензия MIT и все такое
 $picsize="200";
 function imageworks($fval){
 	global $picsize;
